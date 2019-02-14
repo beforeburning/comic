@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+</head>
+<body>
+<div class="one">
+    <span>
+        <% comicNav.forEach((comicNav)=>{ %>
+            <a href="/list?id=<%= comicNav.id %>&pages=1&type=comic"><%= comicNav.name %></a>
+        <% }) %>
+        <% novelNav.forEach((novelNav)=>{ %>
+            <a href="/list?id=<%= novelNav.id %>&pages=1&type=novel"><%= novelNav.name %></a>
+        <% }) %>
+        <a class="btn" href="/img">图片搜索</a>
+    </span>
+</div>
+
+<div class="imgform">
+    <form action="/img">
+        <input type="text" name="val" value="<%= val %>">
+        <input type="text" name="pages" value="1" style="display: none">
+        <select class="size" name="size">
+            <% BaiduImgSelect.forEach((BaiduImgSelect)=>{ %>
+                <option value="<%= BaiduImgSelect.value %>" <%= size == BaiduImgSelect.value ? selected = "selected" : '' %>><%- BaiduImgSelect.size %></option>
+            <% }) %>
+        </select>
+        <button>搜索</button>
+    </form>
+</div>
+
+<div class="imgcontent">
+    <% imgList.forEach((imgList)=>{ %>
+        <% if(imgList.middleURL) { %>
+            <div>
+                <i><img src="<%= imgList.middleURL %>" alt=""></i>
+                <span>
+                    <p><%= imgList.fromPageTitleEnc %></p>
+                    <p>宽高(比例):&nbsp;&nbsp;<%= imgList.width %>*<%= imgList.height %></p>
+                    <p>
+                        <a href="<%= uncompile(imgList.objURL) %>" target="_blank">大图地址(不一定可用)</a>
+                        <a href='<%= imgList.thumbURL %>' target="_blank">缩略图一</a>&nbsp;&nbsp;
+                        <a href='<%= imgList.middleURL %>' target="_blank">缩略图二</a>
+                    </p>
+                    <p>TAG:&nbsp;&nbsp;<%- imgList.fromPageTitleEnc %></p>
+                </span>
+            </div>
+        <% } %>
+    <% }) %>
+</div>
+<div class="page">
+    <a href="<%= prev %>" class="prev">上一页</a>
+    <a href="<%= next %>" class="next">下一页</a>
+</div>
+</body>
+</html>

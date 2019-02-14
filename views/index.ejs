@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+</head>
+<body>
+<div>
+    <div class="one">
+        <span>
+            <% comicNav.forEach((comicNav)=>{ %>
+                <a href="/list?id=<%= comicNav.id %>&pages=1&type=comic"><%= comicNav.name %></a>
+            <% }) %>
+            <% novelNav.forEach((novelNav)=>{ %>
+                <a href="/list?id=<%= novelNav.id %>&pages=1&type=novel"><%= novelNav.name %></a>
+            <% }) %>
+        </span>
+    </div>
+</div>
+<script>
+  document.getElementsByClassName('one')[0].getElementsByTagName('span')[0].children[0].click()
+</script>
+</body>
+</html>

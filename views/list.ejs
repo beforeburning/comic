@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+</head>
+<body>
+<div>
+    <div class="one">
+        <span>
+            <% comicNav.forEach((comicNav)=>{ %>
+                <a href="/list?id=<%= comicNav.id %>&pages=1&type=comic"
+                   class=<%= (parent == comicNav.id && type == 'comic') ? 'btn' : '' %>><%= comicNav.name %></a>
+            <% }) %>
+            <% novelNav.forEach((novelNav)=>{ %>
+                <a href="/list?id=<%= novelNav.id %>&pages=1&type=novel"
+                   class=<%= (parent == novelNav.id && type == 'novel') ? 'btn' : '' %>><%= novelNav.name %></a>
+            <% }) %>
+            <a href="/img">图片搜索</a>
+        </span>
+        <form action="/search" onsubmit="return check()" target="_blank">
+            <input id="search" type="text" placeholder="请输入您要搜索的内容" name='val' maxlength="10">
+            <input type="text" name='parent' value='<%= parent %>' style="display: none">
+            <input type="text" name='type' value='<%= type %>' style="display: none">
+            <button>搜索</button>
+        </form>
+    </div>
+    <div class="two">
+        <% listItem.forEach((listItem)=>{ %>
+            <a href="/chapter?id=<%= listItem.id %>&parent=<%= parent %>&type=<%= type %>"><%= listItem.name %></a>
+        <% }) %>
+    </div>
+    <div class="page">
+        <em class="prev">上一页</em>
+        <em class="next">下一页</em>
+    </div>
+</div>
+<script>
+  // 搜索
+  function getObj (id) {
+    var Obj = document.getElementById(id).value;
+    return Obj;
+  }
+
+  function check () {
+    if (getObj("search") == "") {
+      alert("文本框输入为空，不能提交表单！");
+      document.getElementById("search").focus;
+      return false;
+    }
+  }
+
+  // url 处理
+  function GetRequest () {
+    var url = location.search; //获取url中"?"符后的字串
+    var theRequest = new Object();
+    if (url.indexOf("?") != -1) {
+      var str = url.substr(1);
+      strs = str.split("&");
+      for (var i = 0; i < strs.length; i++) {
+        theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+      }
+    }
+    return theRequest;
+  }
+
+  var list = document.getElementsByClassName('two')[0].children.length
+  var url = GetRequest()
+  document.getElementsByClassName('prev')[0].onclick = function () {
+    if (url.pages == 1) {
+      alert('没有上一页')
+    } else {
+      window.location.href = '/list?id=' + url.id + '&pages=' + (parseInt(<%= pages %>) - 1) + '&type=<%= type %>'
+    }
+  }
+  document.getElementsByClassName('next')[0].onclick = function () {
+    if (list === <%= pagemax %>) {
+      window.location.href = '/list?id=' + url.id + '&pages=' + (parseInt(<%= pages %>) + 1) + '&type=<%= type %>'
+    } else {
+      alert('没有下一页')
+    }
+  }
+</script>
+</body>
+</html>

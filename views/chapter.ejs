@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+</head>
+<body>
+<div>
+    <div class="one">
+        <span>
+            <% comicNav.forEach((comicNav)=>{ %>
+                <a href="/list?id=<%= comicNav.id %>&pages=1&type=comic"
+                   class=<%= (parent == comicNav.id && type == 'comic') ? 'btn' : '' %>><%= comicNav.name %></a>
+            <% }) %>
+            <% novelNav.forEach((novelNav)=>{ %>
+                <a href="/list?id=<%= novelNav.id %>&pages=1&type=novel"
+                   class=<%= (parent == novelNav.id && type == 'novel') ? 'btn' : '' %>><%= novelNav.name %></a>
+            <% }) %>
+        </span>
+    </div>
+    <div class="three">
+        <h3>当前:&nbsp;&nbsp;<%= title %>&nbsp;&gt;&nbsp;<em>章节</em></h3>
+        <span>
+            <p>
+                <% chapterList.forEach((chapterList)=>{ %>
+                    <a href="/content?id=<%= chapterList.id %>&parent=<%= parent %>&chapter=<%= chapter %>&type=<%= type %>">
+                        <%= type == 'comic' ? chapterList.name : chapterList.chapter_name %>
+                    </a>
+                <% }) %>
+            </p>
+        </span>
+    </div>
+</div>
+</body>
+</html>

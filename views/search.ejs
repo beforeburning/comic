@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+</head>
+<body>
+<div>
+    <div class="one">
+        <span>
+            <span>
+                <% comicNav.forEach((comicNav)=>{ %>
+                    <a href="/list?id=<%= comicNav.id %>&pages=1&type=comic"
+                       class=<%= (parent == comicNav.id && type == 'comic') ? 'btn' : '' %>><%= comicNav.name %></a>
+                <% }) %>
+                <% novelNav.forEach((novelNav)=>{ %>
+                    <a href="/list?id=<%= novelNav.id %>&pages=1&type=novel"
+                       class=<%= (parent == novelNav.id && type == 'novel') ? 'btn' : '' %>><%= novelNav.name %></a>
+                <% }) %>
+            </span>
+        </span>
+        <form action="/search" onsubmit="return check()" target="_blank">
+            <input id="search" type="text" placeholder="请输入您要搜索的内容" name='val' maxlength="10">
+            <input type="text" name='parent' value='<%= parent %>' style="display: none">
+            <input type="text" name="type" value="<%= type %>" style="display: none">
+            <button>搜索</button>
+        </form>
+    </div>
+    <div class="search">
+        <h3>搜索 <%= parenttitle %> 的结果,共<%= searchList.length %>条:</h3>
+        <span>
+            <% searchList.forEach((searchList)=>{ %>
+                <a href="/chapter?id=<%= searchList.id %>&parent=<%= parent %>&type=<%= type %>"><%= searchList.name %></a>
+            <% }) %>
+        </span>
+    </div>
+</div>
+<script>
+  // 搜索
+  function getObj (id) {
+    var Obj = document.getElementById(id).value;
+    return Obj;
+  }
+
+  function check () {
+    if (getObj("search") == "") {
+      alert("文本框输入为空，不能提交表单！");
+      document.getElementById("search").focus;
+      return false;
+    }
+  }
+</script>
+</body>
+</html>

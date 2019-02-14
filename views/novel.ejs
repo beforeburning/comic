@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <meta name="referrer" content="no-referrer"/>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+</head>
+<body>
+<div>
+    <div class="one">
+        <span>
+            <span>
+                <% comicNav.forEach((comicNav)=>{ %>
+                    <a href="/list?id=<%= comicNav.id %>&pages=1&type=comic"
+                       class=<%= (parent == comicNav.id && type == 'comic') ? 'btn' : '' %>><%= comicNav.name %></a>
+                <% }) %>
+                <% novelNav.forEach((novelNav)=>{ %>
+                    <a href="/list?id=<%= novelNav.id %>&pages=1&type=novel"
+                       class=<%= (parent == novelNav.id && type == 'novel') ? 'btn' : '' %>><%= novelNav.name %></a>
+                <% }) %>
+            </span>
+        </span>
+    </div>
+    <div class="pagefour">
+        <a class="prevfour" href="<%= prev %>">上一篇</a>
+        <a class="nextfour" href="<%= next %>">下一篇</a>
+    </div>
+    <div class="novel">
+        <a href="<%= url %>" target="_blank">[<%= novelType %>]&nbsp;&nbsp;&nbsp;<%= title %></a>
+        <div class="content">
+            <p><%- content %></p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

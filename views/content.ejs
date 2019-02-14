@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <meta name="referrer" content="no-referrer"/>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+    <link rel='stylesheet' href='/stylesheets/swiper.css'/>
+</head>
+<body>
+<div>
+    <div class="one">
+        <span>
+            <% comicNav.forEach((comicNav)=>{ %>
+                <a href="/list?id=<%= comicNav.id %>&pages=1&type=comic"
+                   class=<%= (parent == comicNav.id && type == 'comic') ? 'btn' : '' %>><%= comicNav.name %></a>
+            <% }) %>
+            <% novelNav.forEach((novelNav)=>{ %>
+                <a href="/list?id=<%= novelNav.id %>&pages=1&type=novel"
+                   class=<%= (parent == novelNav.id && type == 'novel') ? 'btn' : '' %>><%= novelNav.name %></a>
+            <% }) %>
+        </span>
+    </div>
+    <div class="fourTitle">
+        <a href="<%= url %>" target="_blank"><%= title %></a>
+    </div>
+    <div class="pagefour">
+        <a class="prevfour" href="<%= prev %>">上一篇</a>
+        <a class="nextfour" href="<%= next %>">下一篇</a>
+    </div>
+    <div class="fourImg">
+        <div class="banner">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <% imglist.forEach((itemList)=>{ %>
+                        <div class="swiper-slide">
+                            <img data-src="<%= itemList.img_url %>" class="swiper-lazy">
+                        </div>
+                    <% }) %>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="swiper-pagination"></div>
+
+    <div class="anchor">
+
+    </div>
+</div>
+<script src="/javascripts/swiper.js" type="text/javascript"></script>
+<script>
+  var swiper = new Swiper('.swiper-container', {
+    lazy: true,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+      paginationClickable: true,
+      preloadImages: false,
+      autoHeight: true,
+      renderBullet: function (index, className) {
+        return '<span class="' + className + '">' + (index + 1) + '</span>';
+      },
+    },
+  });
+</script>
+</body>
+</html>

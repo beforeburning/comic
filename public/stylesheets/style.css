@@ -1,0 +1,289 @@
+a, input, textarea {outline: 0}
+
+article, aside, audio, body, dd, div, dl, footer, form, h1, h2, h3, h4, h5, h6, header, iframe, input, label, nav, ol, p, section, select, td, textarea, th, time, ul, video {margin: 0;padding: 0}
+
+article, aside, audio, canvas, footer, header, nav, section, video {display: block}
+
+body {font: 14px/1.5 '-apple-system', BlinkMacSystemFont, Roboto, Ubuntu, "PingFang SC", "Microsoft YaHei UI", "Microsoft YaHei", "Source Han Sans CN", sans-serif;background: #fff}
+
+em, i, sub, sup {font-style: normal}
+
+textarea {resize: none}
+
+button, input {-webkit-appearance: none}
+
+iframe, img {border: 0}
+
+li, ol, ul {list-style: none}
+
+a {text-decoration: none;list-style-type: none;color: #333}
+
+h1, h2, h3, strong {font-weight: 400}
+
+.clearfix:after {content: ".";display: block;height: 0;clear: both;visibility: hidden}
+
+.clearfix {zoom: 1}
+
+sub, sup {vertical-align: baseline}
+
+.one {
+    float: left;width: 100%;background: #3ca3f7;height: 50px;line-height: 50px;
+}
+
+.one span {
+    float: left;margin-left: 30px;font-size: 0;
+}
+
+.one a {
+    padding: 15px;font-size: 18px;color: white;margin-right: 10px;
+}
+
+.one a:hover {
+    background: #80c3fa;transition: .1s
+}
+
+.one a.btn {
+    background: #80c3fa;
+}
+
+.one form {
+    float: right;margin-right: 30px;font-size: 0;
+}
+
+.one form input {
+    float: left;width: 200px;border: 0;background: white;border-radius: 5px 0 0 5px;height: 35px;text-indent: 15px;margin-top: 7px;font-size: 14px;color: #333;
+}
+
+.one form button {
+    width: 60px;height: 35px;padding: 0;margin: 0;border: 0;margin-top: 7px;background: #f3c923;border-radius: 0 5px 5px 0;color: white;letter-spacing: 3px;font-size: 14px;color: #333;cursor: pointer;
+}
+
+.two {
+    float: left;width: 100%;
+}
+
+.two a {
+    float: left;text-indent: 30px;width: 25%;height: 50px;line-height: 50px;color: #333;font-size: 16px;
+}
+
+.two a:hover {
+    color: #3ca3f7;
+}
+
+.page {
+    float: left;width: 100%;font-size: 0;display: inline-block;text-align: center;margin: 30px 0;
+}
+
+.page em {
+    font-size: 14px;width: 300px;cursor: pointer;display: inline-block;background: #3ca3f7;color: white;height: 50px;line-height: 50px;text-align: center;border-radius: 5px;
+}
+
+.page em:first-child {
+    margin-right: 30px;
+}
+
+.page a {
+    font-size: 14px;width: 300px;cursor: pointer;display: inline-block;background: #3ca3f7;color: white;height: 50px;line-height: 50px;text-align: center;border-radius: 5px;
+}
+
+.page a:first-child {
+    margin-right: 30px;
+}
+
+.three h3 {
+    float: left;margin: 50px 0 0 0;font-size: 20px;color: #333;width: 100%;text-indent: 50px;
+}
+
+.three span {
+    float: left;margin: 30px 0 0 0;font-size: 16px;color: #333;width: 100%;
+}
+
+.three span em {
+    float: left;
+}
+
+.three span p {
+    float: left;width: 100%;
+}
+
+.three span a {
+    float: left;color: #333;font-size: 16px;margin-bottom: 20px;width: 20%;text-indent: 50px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;
+}
+
+.three span a:hover {
+    color: #3ca3f7;
+}
+
+.fourTitle {
+    float: left;width: 100%;
+}
+
+.fourTitle a {
+    float: left;width: 100%;font-size: 20px;text-align: center;margin: 15px 0;
+}
+
+.fourTitle p {
+    float: left;width: 100%;font-size: 20px;text-align: center;margin: 30px 0;
+}
+
+.fourTitle span {
+    float: left;width: 100%;display: inline-block;text-align: center;
+}
+
+.fourTitle span img {
+    width: 80%;display: inline-block;text-align: center;
+}
+
+.fourImg {
+    margin: 0 auto;width: 600px;overflow: hidden;
+}
+
+.fourImg span {
+    float: left;width: 100%;display: inline-block;text-align: center;
+}
+
+.fourImg span img {
+    width: 80%;display: inline-block;text-align: center;margin-bottom: 15px;
+}
+
+.search {
+    float: left;font-size: 20px;width: 100%;
+}
+
+.search h3 {
+    float: left;width: 100%;text-indent: 30px;text-align: left;margin: 30px 0;
+}
+
+.search span {
+    float: left;width: 100%;
+}
+
+.search a {
+    float: left;text-indent: 30px;width: 25%;height: 50px;line-height: 50px;color: #333;font-size: 16px;
+}
+
+.search a:hover {
+    color: #3ca3f7;
+}
+
+.pagefour {
+    position: fixed;left: 15px;top: 30%;width: 100px;
+}
+
+.prevfour {
+    background: #3ca3f7;width: 100px;height: 40px;display: inline-block;font-size: 14px;color: white;border-radius: 8px;line-height: 40px;text-align: center;
+}
+
+.nextfour {
+    background: #3ca3f7;width: 100px;height: 40px;display: inline-block;font-size: 14px;color: white;border-radius: 8px;line-height: 40px;margin-top: 15px;text-align: center;
+}
+
+.banner {
+    float: left;overflow: hidden;
+}
+
+.swiper-container {
+    float: left;
+    width: 100%;
+    height: auto;
+}
+
+.swiper-slide {
+    text-align: center;
+    width: 600px;
+    font-size: 18px;
+    cursor: pointer;
+    background: #fff;
+}
+
+.swiper-slide img {
+    float: left;width: auto;width: 600px;
+}
+
+.swiper-pagination {
+    position: fixed !important;height: 100%;right: 30px;width: 30px;display: flex;justify-content: center;align-items: center;top: 0;flex-direction: column;font-size: 0;
+}
+
+.swiper-pagination-bullet {
+    color: white;
+    font-size: 12px !important;
+    outline: none;
+    line-height: 20px;
+    margin-bottom: 5px;
+    width: 20px !important;
+    height: 20px !important;
+}
+
+.novel {
+    float: left;width: 100%;
+}
+
+.novel a {
+    float: left;margin: 15px 0;font-size: 20px;text-align: center;width: 100%;
+}
+
+.novel .content {
+    margin: 0 auto;width: 1000px;font-size: 14px;color: #333;line-height: 28px;padding-bottom: 50px;
+}
+
+.imgform {
+    float: left;width: 100%;display: inline-block;text-align: center;
+}
+
+.imgform form {
+    width: 615px;margin: 15px auto 0 auto;
+}
+
+.imgform input {
+    float: left;width: 400px;margin: 0;padding: 0;border-radius: 5px 0 0 5px;border: 1px solid #e8e8e8;box-sizing: border-box;height: 40px;line-height: 40px;font-size: 14px;color: #333;border-right: 0;text-indent: 15px;
+}
+
+.imgform button {
+    float: left;width: 100px;color: white;background: #3ca3f7;margin: 0;padding: 0;height: 40px;line-height: 40px;border-radius: 0 5px 5px 0;border: 0;font-size: 20px;outline: none;
+}
+
+.imgcontent {
+    float: left;width: 90%;margin-top: 15px;margin-left: 5%;
+}
+
+.imgcontent div {
+    float: left;width: 24%;padding-right: 1%;margin-bottom: 15px;
+}
+
+.imgcontent div i {
+    float: left;width: 100%;height: 300px;background: #e8e8e8;position: relative;overflow: hidden;
+}
+
+.imgcontent div img {
+    position: absolute;
+    width: 100%;
+    left: 0;
+}
+
+.imgcontent div span {
+}
+
+.imgcontent div span p {
+    float: left;width: 100%;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;
+    margin-top: 5px
+}
+
+select {
+    width: 100px;cursor: pointer;margin-left: 15px;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    height: 28px;
+    border: 1px #e5e5e5 solid;
+    padding: 0 5px;
+    outline: none;
+    height: 40px;line-height: 40px;
+}
+
+select::-ms-expand { display: none; }
+
+select option {
+    text-indent: 10px;
+    color: #333;
+}
+
